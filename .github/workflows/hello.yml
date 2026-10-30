@@ -1,0 +1,16 @@
+name: Hello World            # The name shown in the Actions tab
+
+on: [push]                   # Trigger: run on every push
+
+jobs:
+  say-hello:                 # A job ID (you choose the name)
+    runs-on: ubuntu-latest   # The runner machine
+    steps:
+      - name: Print a greeting
+        run: echo "Hello, GitHub Actions!"
+
+      - name: Show some info
+        run: |
+          echo "Today is $(date)"
+          echo "Triggered by: ${{ github.actor }}"
+          echo "Repository: ${{ github.repository }}"
